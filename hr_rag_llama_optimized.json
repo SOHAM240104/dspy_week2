@@ -1,0 +1,62 @@
+{
+  "answer.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "question": "How many PTO days do we get each year?",
+        "context": "- Time Off: Accrue 1.5 days PTO/month (18/year). Carry over 5 days. Parental leave: 16 weeks.\n\n- Classifications: full-time, part-time, temporary, intern, contractor. Payroll is biweekly on Fridays.\n\n- Standard hours: 9:00–17:30. Core collab: 10:00–16:00. Home-office stipend: $500 for new hires.",
+        "reasoning": "According to our Time Off policy, full-time employees accrue 1.5 days of PTO per month, which is equivalent to 18 days per year.",
+        "answer": "18"
+      },
+      {
+        "augmented": true,
+        "question": "Do I need a receipt for a $50 lunch?",
+        "context": "- Expenses: Under $75 no receipt needed. No alcohol reimbursement. Submit within 30 days.\n\n- Equipment: Choose MacBook Pro or Dell XPS. MFA required. Loss must be reported in 24h.\n\n- Classifications: full-time, part-time, temporary, intern, contractor. Payroll is biweekly on Fridays.",
+        "reasoning": "Since the lunch expense is under $75, a receipt is not required. Additionally, since alcohol is not reimbursable, the fact that it was purchased at a restaurant does not change the need for a receipt.",
+        "answer": "No receipt needed"
+      },
+      {
+        "augmented": true,
+        "question": "Is alcohol reimbursable?",
+        "context": "- Expenses: Under $75 no receipt needed. No alcohol reimbursement. Submit within 30 days.\n\n- EEO Policy: We prohibit discrimination. Report concerns to manager or HR. Retaliation is forbidden.\n\n- Equipment: Choose MacBook Pro or Dell XPS. MFA required. Loss must be reported in 24h.",
+        "reasoning": "According to the context, under $75 no receipt is needed, but more importantly, it specifically states \"No alcohol reimbursement.\" This policy clearly indicates that alcohol-related expenses are not eligible for reimbursement.",
+        "answer": "No"
+      },
+      {
+        "question": "What laptops can I choose?",
+        "answer": "MacBook Pro and Dell XPS"
+      }
+    ],
+    "signature": {
+      "instructions": "Use retrieved context to interpret company policies and benefits related to time-off, expenses, laptop choices, and other HR-related topics. Provide step-by-step reasoning, focusing on key policy details and applicable rules.",
+      "fields": [
+        {
+          "prefix": "Question:",
+          "description": "${question}"
+        },
+        {
+          "prefix": "Context:",
+          "description": "relevant handbook snippets"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Answer:",
+          "description": "${answer}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.13",
+      "dspy": "3.1.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

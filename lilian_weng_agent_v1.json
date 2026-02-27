@@ -1,0 +1,53 @@
+{
+  "respond.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "question": "What is self-reflection in agents?",
+        "answer": "It allows agents to improve by iteratively correcting past mistakes."
+      },
+      {
+        "question": "What does ReAct stand for?",
+        "answer": "Reason and Act."
+      },
+      {
+        "question": "What is the role of the 'Planner' in an LLM agent?",
+        "answer": "The planner breaks down complex tasks into smaller sub-goals."
+      }
+    ],
+    "signature": {
+      "instructions": "Answer technical questions based on the provided context.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "Relevant snippets from the blog"
+        },
+        {
+          "prefix": "Question:",
+          "description": "${question}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Rationale:",
+          "description": "Step-by-step thinking to arrive at the answer."
+        },
+        {
+          "prefix": "Answer:",
+          "description": "A detailed yet concise technical answer"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.13",
+      "dspy": "3.1.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

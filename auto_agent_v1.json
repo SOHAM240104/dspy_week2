@@ -1,0 +1,78 @@
+{
+  "respond.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "context": [
+          "Illustration of the Reflexion framework. (Image source: Shinn & Labash, 2023)\n\nThe heuristic function determines when the trajectory is inefficient or contains hallucination and should be stopped. Inefficient planning refers to trajectories that take too long without success. Hallucination is defined as encountering a sequence of consecutive identical actions that lead to the same observation in the environment.\nSelf-reflection is created by showing two-shot examples to LLM and each example is a pair of (failed trajectory, ideal reflection for guiding future changes in the plan). Then reflections are added into the agent’s working memory, up to three, to be used as context for querying LLM.\n\n\nExperiments on AlfWorld Env and HotpotQA. Hallucination is a more common failure than inefficient planning in AlfWorld. (Image source: Shinn & Labash, 2023)",
+          "Illustration of the Reflexion framework. (Image source: Shinn & Labash, 2023)\n\nThe heuristic function determines when the trajectory is inefficient or contains hallucination and should be stopped. Inefficient planning refers to trajectories that take too long without success. Hallucination is defined as encountering a sequence of consecutive identical actions that lead to the same observation in the environment.\nSelf-reflection is created by showing two-shot examples to LLM and each example is a pair of (failed trajectory, ideal reflection for guiding future changes in the plan). Then reflections are added into the agent’s working memory, up to three, to be used as context for querying LLM.\n\n\nExperiments on AlfWorld Env and HotpotQA. Hallucination is a more common failure than inefficient planning in AlfWorld. (Image source: Shinn & Labash, 2023)",
+          "Illustration of the Reflexion framework. (Image source: Shinn & Labash, 2023)\n\nThe heuristic function determines when the trajectory is inefficient or contains hallucination and should be stopped. Inefficient planning refers to trajectories that take too long without success. Hallucination is defined as encountering a sequence of consecutive identical actions that lead to the same observation in the environment.\nSelf-reflection is created by showing two-shot examples to LLM and each example is a pair of (failed trajectory, ideal reflection for guiding future changes in the plan). Then reflections are added into the agent’s working memory, up to three, to be used as context for querying LLM.\n\n\nExperiments on AlfWorld Env and HotpotQA. Hallucination is a more common failure than inefficient planning in AlfWorld. (Image source: Shinn & Labash, 2023)"
+        ],
+        "question": "What is considered \"hallucination\" in the context of planning trajectories?",
+        "reasoning": "Hallucination is defined as encountering a sequence of consecutive identical actions that lead to the same observation in the environment. This means that when an agent takes the same action repeatedly without achieving any progress, it may be hallucinating.",
+        "answer": "A sequence of consecutive identical actions that lead to the same observation in the environment."
+      },
+      {
+        "augmented": true,
+        "context": [
+          "To avoid overfitting, CoH adds a regularization term to maximize the log-likelihood of the pre-training dataset. To avoid shortcutting and copying (because there are many common words in feedback sequences), they randomly mask 0% - 5% of past tokens during training.\nThe training dataset in their experiments is a combination of WebGPT comparisons, summarization from human feedback and human preference dataset.",
+          "To avoid overfitting, CoH adds a regularization term to maximize the log-likelihood of the pre-training dataset. To avoid shortcutting and copying (because there are many common words in feedback sequences), they randomly mask 0% - 5% of past tokens during training.\nThe training dataset in their experiments is a combination of WebGPT comparisons, summarization from human feedback and human preference dataset.",
+          "To avoid overfitting, CoH adds a regularization term to maximize the log-likelihood of the pre-training dataset. To avoid shortcutting and copying (because there are many common words in feedback sequences), they randomly mask 0% - 5% of past tokens during training.\nThe training dataset in their experiments is a combination of WebGPT comparisons, summarization from human feedback and human preference dataset."
+        ],
+        "question": "How much of past tokens are randomly masked during training in CoH?",
+        "reasoning": "The text states that CoH randomly masks 0% - 5% of past tokens during training to avoid shortcutting and copying.",
+        "answer": "Between 0% and 5% of past tokens are randomly masked during training in Chain of Hindsight (CoH)."
+      },
+      {
+        "augmented": true,
+        "context": [
+          "After fine-tuning with CoH, the model can follow instructions to produce outputs with incremental improvement in a sequence. (Image source: Liu et al. 2023)\n\nThe idea of CoH is to present a history of sequentially improved outputs  in context and train the model to take on the trend to produce better outputs. Algorithm Distillation (AD; Laskin et al. 2023) applies the same idea to cross-episode trajectories in reinforcement learning tasks, where an algorithm is encapsulated in a long history-conditioned policy. Considering that an agent interacts with the environment many times and in each episode the agent gets a little better, AD concatenates this learning history and feeds that into the model. Hence we should expect the next predicted action to lead to better performance than previous trials. The goal is to learn the process of RL instead of training a task-specific policy itself.\n\n\nIllustration of how Algorithm Distillation (AD) works. (Image source: Laskin et al. 2023).",
+          "After fine-tuning with CoH, the model can follow instructions to produce outputs with incremental improvement in a sequence. (Image source: Liu et al. 2023)\n\nThe idea of CoH is to present a history of sequentially improved outputs  in context and train the model to take on the trend to produce better outputs. Algorithm Distillation (AD; Laskin et al. 2023) applies the same idea to cross-episode trajectories in reinforcement learning tasks, where an algorithm is encapsulated in a long history-conditioned policy. Considering that an agent interacts with the environment many times and in each episode the agent gets a little better, AD concatenates this learning history and feeds that into the model. Hence we should expect the next predicted action to lead to better performance than previous trials. The goal is to learn the process of RL instead of training a task-specific policy itself.\n\n\nIllustration of how Algorithm Distillation (AD) works. (Image source: Laskin et al. 2023).",
+          "After fine-tuning with CoH, the model can follow instructions to produce outputs with incremental improvement in a sequence. (Image source: Liu et al. 2023)\n\nThe idea of CoH is to present a history of sequentially improved outputs  in context and train the model to take on the trend to produce better outputs. Algorithm Distillation (AD; Laskin et al. 2023) applies the same idea to cross-episode trajectories in reinforcement learning tasks, where an algorithm is encapsulated in a long history-conditioned policy. Considering that an agent interacts with the environment many times and in each episode the agent gets a little better, AD concatenates this learning history and feeds that into the model. Hence we should expect the next predicted action to lead to better performance than previous trials. The goal is to learn the process of RL instead of training a task-specific policy itself.\n\n\nIllustration of how Algorithm Distillation (AD) works. (Image source: Laskin et al. 2023)."
+        ],
+        "question": "What is the goal of Algorithm Distillation (AD) in reinforcement learning tasks?",
+        "reasoning": "The goal of Algorithm Distillation (AD) is to learn the process of reinforcement learning (RL) instead of training a task-specific policy itself, by encapsulating an algorithm in a long history-conditioned policy and presenting its history to the model. This allows the model to take on the trend of sequential improvement in outputs and produce better performance.",
+        "answer": "To learn the process of RL instead of training a task-specific policy itself."
+      },
+      {
+        "question": "What is the data format for training the model in Chain of Hindsight (CoH)?",
+        "answer": "The data format is $\\tau_h = (x, z_i, y_i, z_j, y_j, \\dots, z_n, y_n)$, where $x$ is the prompt, and subsequent tuples are feedback $z$, model output $y$, in order of increasing index $i, j, ... , n$."
+      },
+      {
+        "question": "What type of reward model does Reflexion's standard setup use?",
+        "answer": "A simple binary reward."
+      }
+    ],
+    "signature": {
+      "instructions": "Answer technical questions based on the provided context.",
+      "fields": [
+        {
+          "prefix": "Context:",
+          "description": "Relevant snippets from the blog"
+        },
+        {
+          "prefix": "Question:",
+          "description": "${question}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Answer:",
+          "description": "A detailed yet concise technical answer"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.13",
+      "dspy": "3.1.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

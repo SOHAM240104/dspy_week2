@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+mlflow.db
+mlruns/
+.env
+*.sqlite
+*.dbdspy_week2/
